@@ -66,11 +66,10 @@ class Login extends StatelessWidget {
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Color(0xFF09478F)),
                         onPressed: () {
-                          EasyLoading.show(status: 'loading.......');
-                          controller.LoginOnClick();
-                          // Get.offNamed('/home');
-                          //
-                          void onclick() {
+                          
+                           EasyLoading.show(status: 'loading.......');
+                           controller.LoginOnClick();
+                           void onclick() {
                             EasyLoading.show(status: 'loading.......');
                              controller.LoginOnClick();
                             if (controller.loginstatus) {
@@ -84,7 +83,7 @@ class Login extends StatelessWidget {
                             }
                           }
 
-                        //onclick();
+                        onclick();
                         },
                         child: const Row(
                           mainAxisSize: MainAxisSize.min,

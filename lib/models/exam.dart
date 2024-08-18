@@ -1,37 +1,37 @@
 // To parse this JSON data, do
 //
-//     final exams = examsFromJson(jsonString);
+//     final exam = examFromJson(jsonString);
 
 import 'dart:convert';
 
-Exams examsFromJson(String str) => Exams.fromJson(json.decode(str));
+Exam examFromJson(String str) => Exam.fromJson(json.decode(str));
 
-String examsToJson(Exams data) => json.encode(data.toJson());
+String examToJson(Exam data) => json.encode(data.toJson());
 
-class Exams {
-    int draw;
-    int recordsTotal;
-    int recordsFiltered;
+class Exam {
+    int page;
+    int count;
+    int total;
     List<Datum> data;
 
-    Exams({
-        required this.draw,
-        required this.recordsTotal,
-        required this.recordsFiltered,
+    Exam({
+        required this.page,
+        required this.count,
+        required this.total,
         required this.data,
     });
 
-    factory Exams.fromJson(Map<String, dynamic> json) => Exams(
-        draw: json["draw"],
-        recordsTotal: json["recordsTotal"],
-        recordsFiltered: json["recordsFiltered"],
+    factory Exam.fromJson(Map<String, dynamic> json) => Exam(
+        page: json["page"],
+        count: json["count"],
+        total: json["total"],
         data: List<Datum>.from(json["data"].map((x) => Datum.fromJson(x))),
     );
 
     Map<String, dynamic> toJson() => {
-        "draw": draw,
-        "recordsTotal": recordsTotal,
-        "recordsFiltered": recordsFiltered,
+        "page": page,
+        "count": count,
+        "total": total,
         "data": List<dynamic>.from(data.map((x) => x.toJson())),
     };
 }
