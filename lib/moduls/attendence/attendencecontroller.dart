@@ -1,17 +1,21 @@
 import 'package:get/get.dart';
+import 'package:untitled3/config/user_info.dart';
 import 'package:untitled3/moduls/attendence/attendance.dart';
 import 'package:untitled3/moduls/attendence/attendanceserve.dart';
 
 class AttendanceController extends GetxController {
-  Attendanceserve service=Attendanceserve();
+  AttendanceService service=AttendanceService();
+  var attendance;
+  var isload=true.obs;
   @override
   void onInit() {
     super.onInit();
   }
 
   @override
-  void onReady() {
-    
+  void onReady() async{
+    attendance=await service.getAttendance(UserInfo.User_Token);
+    isload(false);
     super.onReady();
   }
 }

@@ -3,7 +3,7 @@ import 'package:untitled3/models/profile.dart';
 
 class Profileservice {
   var massege;
-    var url=Uri.parse('http://192.168.43.58:5010//api/Account/Profile​');
+    var url=Uri.parse('https://m-schools.ertiqasoft.com/api/Account/Profile​');
   Future<Profile?> getprofile(String user_token) async{
    var response=await http.get(
       url,

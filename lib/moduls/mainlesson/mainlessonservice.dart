@@ -3,12 +3,12 @@ import 'package:http/http.dart' as http;
 
 class Mainlessonservice{
   var massege;
-    var url=Uri.parse('http://192.168.43.58:5010/api/Syllabuses/DataTables');
+    var url=Uri.parse('https://m-schools.ertiqasoft.com/api/Syllabuses/DataTables');
   Future<List<Datum>> getmain(String user_token) async{
    var response=await http.get(
       url,
       headers: {
-        'Accept':'Application/json',
+        'Content-Type':'application/json',
         'Authorization': 'Bearer $user_token'
        
       },

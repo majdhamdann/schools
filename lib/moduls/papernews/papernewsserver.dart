@@ -2,7 +2,7 @@ import 'package:http/http.dart' as http;
 
 class Papernewsserver{
   var massege;
-   var url=Uri.parse('');
+   var url=Uri.parse('https://m-schools.ertiqasoft.com/');
    Future<void> get_dayinweek(String token) async{
       var response=await http.get(
       url,

@@ -4,7 +4,7 @@ import 'package:untitled3/models/assest.dart';
 
 class SupplierServer{
     var massege;
-    var url=Uri.parse('http://192.168.43.58:5010/api/Assets/DataTables');
+    var url=Uri.parse('https://m-schools.ertiqasoft.com/api/Assets/DataTables');
   Future<List<Datum>> getsupplier(String user_token) async{
    var response=await http.get(
       url,

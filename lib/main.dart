@@ -27,6 +27,8 @@ import 'package:untitled3/moduls/marks/markbuilding.dart';
 import 'package:untitled3/moduls/marks/marks.dart';
 import 'package:untitled3/moduls/papernews/papernews.dart';
 import 'package:untitled3/moduls/papernews/papernewsbuliding.dart';
+import 'package:untitled3/moduls/profile/profile.dart';
+import 'package:untitled3/moduls/profile/profileBuind.dart';
 import 'package:untitled3/moduls/student/stubentbuilding.dart';
 import 'package:untitled3/moduls/student/student_page.dart';
 import 'package:untitled3/moduls/subject/subject.dart';
@@ -56,6 +58,7 @@ void main()=> runApp(
         GetPage(name: '/attitude', page: () => attitude(),binding: AttitudBind()),
         GetPage(name: '/support', page: () => Supports(),binding: Supportbuilding()),
         GetPage(name: '/mainlesson', page: () => MainLessons(),binding: Mainlessonbuilding()),
+        GetPage(name: '/profile', page: () => Profile(),binding: Profilebuind()),
 
       ],
 theme: ThemeData(
