@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:http/http.dart' as http;
@@ -28,16 +29,23 @@ class Loginserver{
       var jsonResponse= jsonDecode(response.body);
       //there msg as back
       massege=jsonResponse['succeeded'];
-      //token=jsonResponse['token'];
-      //UserInfo.User_Token=token;
-       Get.toNamed('/home');
+      //
+      Get.offAllNamed('/home');
+      EasyLoading.dismiss();
+      token=jsonResponse['token'];
+      UserInfo.User_Token=token;
+      print(token);
+      // EasyLoading.showSuccess(massege);
+       Get.offNamed('/home');
+        EasyLoading.dismiss();
        return true;
     }
-    
-    else if(response.statusCode==401){
+     else if(response.statusCode==401){
        var jsonResponse= jsonDecode(response.body);
        massege=jsonResponse['message'];
        //print(jsonResponse['error']);
+       //EasyLoading.showError(massege);
+       //EasyLoading.dismiss();
        return false;
     }
     else{

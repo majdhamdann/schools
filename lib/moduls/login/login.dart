@@ -66,20 +66,25 @@ class Login extends StatelessWidget {
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Color(0xFF09478F)),
                         onPressed: () {
-                          //EasyLoading.show(status: 'loading.......');
+                          EasyLoading.show(status: 'loading.......');
+                          controller.LoginOnClick();
+                          // Get.offNamed('/home');
+                          //
                           void onclick() {
                             EasyLoading.show(status: 'loading.......');
-                            controller.LoginOnClick();
+                             controller.LoginOnClick();
                             if (controller.loginstatus) {
                               EasyLoading.showSuccess(controller.massege);
-                              //Get.toNamed('/home');
+                              Get.offNamed('/home');
+                              EasyLoading.dismiss();
                             } else {
                               if (controller.massege != null)
                                 EasyLoading.showError(controller.massege);
+                                EasyLoading.dismiss();
                             }
                           }
 
-                          onclick();
+                        //onclick();
                         },
                         child: const Row(
                           mainAxisSize: MainAxisSize.min,

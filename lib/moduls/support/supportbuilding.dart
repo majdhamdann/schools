@@ -6,6 +6,6 @@ class Supportbuilding implements Bindings{
    @override
    void dependencies() {
        // Get.put<RegisterController>(RegisterController() );
-       Get.lazyPut(() => SupportController()); 
+       Get.lazyPut(() => Supportcontroller()); 
       }
 }
